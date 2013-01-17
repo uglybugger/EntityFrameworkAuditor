@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkAuditor.App", "EntityFrameworkAuditor.App\EntityFrameworkAuditor.App.csproj", "{F2C7B56F-0573-489E-B709-7769933BC329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkAuditor", "EntityFrameworkAuditor\EntityFrameworkAuditor.csproj", "{6640B891-2491-4334-A37E-0AE296F31AF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2C7B56F-0573-489E-B709-7769933BC329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2C7B56F-0573-489E-B709-7769933BC329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2C7B56F-0573-489E-B709-7769933BC329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2C7B56F-0573-489E-B709-7769933BC329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6640B891-2491-4334-A37E-0AE296F31AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6640B891-2491-4334-A37E-0AE296F31AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6640B891-2491-4334-A37E-0AE296F31AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6640B891-2491-4334-A37E-0AE296F31AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
