@@ -3,11 +3,11 @@ using EntityFrameworkAuditor.ChangeEvents;
 
 namespace EntityFrameworkAuditor
 {
-    public class DataChangedEventArgs : EventArgs
+    public class AuditableActionsOccurredEventArgs : EventArgs
     {
         private readonly IAuditRecord[] _auditRecords;
 
-        public DataChangedEventArgs(IAuditRecord[] auditRecords)
+        public AuditableActionsOccurredEventArgs(IAuditRecord[] auditRecords)
         {
             _auditRecords = auditRecords;
         }

@@ -49,7 +49,7 @@
     <Compile Include="ChangeEvents\EntityChange.cs" />
     <Compile Include="ChangeEvents\IAuditRecord.cs" />
     <Compile Include="ChangeEvents\RelationshipChange.cs" />
-    <Compile Include="DataChangedEventArgs.cs" />
+    <Compile Include="AuditableActionsOccurredEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,10 +10,10 @@ namespace EntityFrameworkAuditor.App
         public DomainContext(string connectionString)
             : base(connectionString)
         {
-            DataChanged += OnDataChanged;
+            AuditableActionsOccurred += OnAuditableActionsOccurred;
         }
 
-        private void OnDataChanged(object sender, DataChangedEventArgs e)
+        private void OnAuditableActionsOccurred(object sender, AuditableActionsOccurredEventArgs e)
         {
             var changes = e.AuditRecords
                            .Select(c => c.ToString())

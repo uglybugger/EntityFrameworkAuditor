@@ -15,7 +15,7 @@ namespace EntityFrameworkAuditor
         {
         }
 
-        public event EventHandler<DataChangedEventArgs> DataChanged;
+        public event EventHandler<AuditableActionsOccurredEventArgs> AuditableActionsOccurred;
 
         public override int SaveChanges()
         {
@@ -23,18 +23,18 @@ namespace EntityFrameworkAuditor
             var relationshipChanges = RelationshipChanges();
 
             var auditRecords = entityChanges.Cast<IAuditRecord>().Union(relationshipChanges.Cast<IAuditRecord>());
-            RaiseDataChanged(auditRecords);
+            RaiseAuditableActionsOccurred(auditRecords);
 
             var result = base.SaveChanges();
             return result;
         }
 
-        private void RaiseDataChanged(IEnumerable<IAuditRecord> auditRecords)
+        private void RaiseAuditableActionsOccurred(IEnumerable<IAuditRecord> auditRecords)
         {
-            var handler = DataChanged;
+            var handler = AuditableActionsOccurred;
             if (handler == null) return;
 
-            var e = new DataChangedEventArgs(auditRecords.ToArray());
+            var e = new AuditableActionsOccurredEventArgs(auditRecords.ToArray());
             handler(this, e);
         }
 
