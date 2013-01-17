@@ -22,7 +22,9 @@ namespace EntityFrameworkAuditor
             var entityChanges = EntityChanges();
             var relationshipChanges = RelationshipChanges();
 
-            var auditRecords = entityChanges.Cast<IAuditRecord>().Union(relationshipChanges.Cast<IAuditRecord>());
+            var auditRecords = Enumerable.Empty<IAuditRecord>()
+                                         .Union(entityChanges)
+                                         .Union(relationshipChanges);
             RaiseAuditableActionsOccurred(auditRecords);
 
             var result = base.SaveChanges();
