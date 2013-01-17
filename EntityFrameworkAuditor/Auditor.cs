@@ -35,7 +35,13 @@ namespace EntityFrameworkAuditor
 
         public static string ToDeletedMessage(this DbEntityEntry e)
         {
-            throw new NotImplementedException();
+            var message = "Deleted " + e.Entity.GetType().Name;
+            foreach (var pn in e.OriginalValues.PropertyNames)
+            {
+                var v = e.OriginalValues.GetValue<object>(pn).ToString();
+                message += "\r\n" + pn + ": " + v;
+            }
+            return message;
         }
 
         public static string ToModifiedMessage(this DbEntityEntry e)

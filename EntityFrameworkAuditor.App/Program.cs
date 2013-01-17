@@ -4,10 +4,17 @@ using EntityFrameworkAuditor.App.Domain.Entities;
 
 namespace EntityFrameworkAuditor.App
 {
-    internal class Program
+    public class Program
     {
-        private static void Main(string[] args)
+        public static void Main()
         {
+            using (var context = CreateContext())
+            {
+                foreach (var student in context.Students.ToArray()) context.Students.Remove(student);
+                foreach (var subject in context.Subjects.ToArray()) context.Subjects.Remove(subject);
+                context.SaveChanges();
+            }
+
             using (var context = CreateContext())
             {
                 var fred = new Student("Fred", "Flintstone");
@@ -18,7 +25,6 @@ namespace EntityFrameworkAuditor.App
                 var law = new Subject("Law");
 
                 context.Subjects.Add(law);
-
 
                 context.SaveChanges();
             }
@@ -46,7 +52,6 @@ namespace EntityFrameworkAuditor.App
                 fred.CancelEnrolmentIn(law);
                 context.SaveChanges();
             }
-
 
             Console.ReadKey();
         }
