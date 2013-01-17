@@ -3,13 +3,8 @@ using System.Data;
 using System.Data.Metadata.Edm;
 using System.Linq;
 
-namespace EntityFrameworkAuditor.App
+namespace EntityFrameworkAuditor.ChangeEvents
 {
-    public interface IAuditRecord
-    {
-        IEnumerable<EntityKey> PertainsTo { get; }
-    }
-
     public class RelationshipChange : IAuditRecord
     {
         private readonly EntityKey _sourceKey;

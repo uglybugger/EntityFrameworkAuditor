@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuditingDbContext.cs" />
+    <Compile Include="Auditor.cs" />
+    <Compile Include="ChangeEvents\EntityChange.cs" />
+    <Compile Include="ChangeEvents\IAuditRecord.cs" />
+    <Compile Include="ChangeEvents\RelationshipChange.cs" />
+    <Compile Include="DataChangedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

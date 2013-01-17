@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.Entity.Infrastructure;
 
-namespace EntityFrameworkAuditor.App
+namespace EntityFrameworkAuditor
 {
     public static class Auditor
     {
