@@ -19,7 +19,11 @@ namespace EntityFrameworkAuditor.App
                            .Select(c => c.ToString())
                            .ToArray();
 
-            foreach (var change in changes) Console.WriteLine(change);
+            foreach (var change in changes)
+            {
+                Console.WriteLine(change);
+                Console.WriteLine();
+            }
         }
 
         public DbSet<Student> Students { get; set; }
